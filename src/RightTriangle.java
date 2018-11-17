@@ -4,8 +4,8 @@ import java.awt.Point;
 /**
  * This class maintains information for drawing a Right Triangle and extends Polygon.
  * 
- * @author Stephen
- * @version 2018-04-02
+ * @author Stephen & Tim Weaver
+ * @version 2018-11-17
  * Lab 11
  */
 public class RightTriangle extends Polygon
@@ -26,5 +26,11 @@ public class RightTriangle extends Polygon
     public RightTriangle(Point pointRightAngle, int base, int height, Color color, boolean filled)
     {
         // TODO: implement this
+        super(color, filled);
+        
+        location = new Point[3];
+        location[0] = new Point(pointRightAngle.x, pointRightAngle.y);
+        location[1] = new Point(pointRightAngle.x + base, pointRightAngle.y);
+        location[2] = new Point(pointRightAngle.x, pointRightAngle.y + height);
     }
 }
