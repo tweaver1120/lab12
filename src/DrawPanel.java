@@ -2,11 +2,12 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
+
 /**
  * This a type of component, that holds and draws the drawable objects
  * 
- * @author Stephen
- * @version 2018-04-02
+ * @author Stephen & Tim Weaver
+ * @version 2018-11-17
  * Lab 11
  */
 public class DrawPanel extends JPanel
@@ -26,7 +27,8 @@ public class DrawPanel extends JPanel
      */
     public void addShape(Shape shape)
     {
-        // TODO: add the passed in shape to the list.
+        // TODO: add the passed in shape to the list. 
+        shapeList.add(shape);
     }
 
     /**
@@ -40,5 +42,9 @@ public class DrawPanel extends JPanel
         super.paintComponent(graphics);
         
         // TODO: for all shapes in the list, draw the shape.
+        for(Shape shape : shapeList)
+        {
+            shape.draw(graphics);
+        }
     }
 }
